@@ -1,17 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_freenarr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tonlogin <tonlogin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tonlogin <tonlogin@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 10:21:37 by tonlogin          #+#    #+#             */
-/*   Updated: 2025/10/15 09:40:47 by pchazalm         ###   ########.fr       */
+/*   Created: 2025/10/16 11:27:56 by tonlogin          #+#    #+#             */
+/*   Updated: 2025/10/16 14:43:19 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include <stdlib.h>
+
+void	ft_freenarr(char **arr, int nb)
 {
-	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-		|| (c >= '0' && c <= '9'));
+	int	i;
+
+	i = 0;
+	while (i < nb)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }

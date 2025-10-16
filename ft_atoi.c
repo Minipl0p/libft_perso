@@ -6,7 +6,7 @@
 /*   By: tonlogin <tonlogin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 10:07:54 by tonlogin          #+#    #+#             */
-/*   Updated: 2025/10/14 17:03:48 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/15 09:19:10 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *ptr)
 	result = 0;
 	sign = 1;
 	i = 0;
-	while (ptr[i] == ' ' || ptr[i] >= '\t' && ptr[i] <= '\r')
+	while (ptr[i] == ' ' || ((ptr[i] >= '\t') && (ptr[i] <= '\r')))
 		i++;
 	if (ptr[i] == '+')
 		i++;

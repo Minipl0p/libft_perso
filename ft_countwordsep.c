@@ -1,17 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_countwordsep.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tonlogin <tonlogin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tonlogin <tonlogin@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 10:21:37 by tonlogin          #+#    #+#             */
-/*   Updated: 2025/10/15 09:40:47 by pchazalm         ###   ########.fr       */
+/*   Created: 2025/10/16 11:40:03 by tonlogin          #+#    #+#             */
+/*   Updated: 2025/10/16 14:43:29 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+int	ft_countwordsep(char const *s, char c)
 {
-	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-		|| (c >= '0' && c <= '9'));
+	int	count;
+	int	flag;
+
+	count = 0;
+	flag = 1;
+	while (*s)
+	{
+		if (*s != c && flag)
+		{
+			flag = 0;
+			count++;
+		}
+		else if (*s == c)
+			flag = 1;
+		s++;
+	}
+	return (count);
 }
