@@ -6,7 +6,7 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 14:05:54 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/17 14:48:22 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/18 00:01:53 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (!lst || !*lst || !new)
+	if (!lst || !new)
 		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
 	last = ft_lstlast(*lst);
 	last->next = new;
 }

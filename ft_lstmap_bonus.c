@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_itoa.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 17:29:31 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/16 17:35:28 by pchazalm         ###   ########.fr       */
+/*   Created: 2025/10/17 22:42:31 by pchazalm          #+#    #+#             */
+/*   Updated: 2025/10/17 23:27:20 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+#include <unistd.h>
 
-int	main(void)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char *a = ft_itoa(127);
-	char *b = ft_itoa(-127);
-	char *c = ft_itoa(1);
-	char *d = ft_itoa(0);
-	char *e = ft_itoa(2147483647);
-	char *f = ft_itoa(-2147483648);
-	char *g = ft_itoa(-10);
-	printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n", a, b, c, d, e, f, g);
-	return (0);	
+	t_list	*n_list;
+	t_list	*n_elem;
+
+	if (!lst || !f || !del)
+		return (NULL);
+	n_list = ft_lstnew(f(lst->content));
+	lst = lst->next;
+	while (lst)
+	{
+		n_elem = ft_lstnew(f(lst->content));
+		if (!n_elem)
+		{
+			ft_lstclear(&n_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&n_list, n_elem);
+		lst = lst->next;
+	}
+	return (n_list);
 }

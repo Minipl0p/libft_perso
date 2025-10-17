@@ -6,7 +6,7 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 12:17:10 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/17 15:08:47 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/17 23:44:33 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
 
-	if (!content)
-		return (NULL);
 	new = malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
