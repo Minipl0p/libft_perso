@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_memcmp.c                                      :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tonlogin <tonlogin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 18:55:45 by tonlogin          #+#    #+#             */
-/*   Updated: 2025/09/09 19:05:09 by tonlogin         ###   ########.fr       */
+/*   Created: 2025/10/17 13:32:14 by pchazalm          #+#    #+#             */
+/*   Updated: 2025/10/17 13:54:06 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n);
-
-int	main(int ac, char **av)
+int	ft_lstsize(t_list *lst)
 {
-	ac++;
-	int	i = ft_memcmp(av[1], av[2], (size_t)atoi(av[3]));
-	printf("%d", i);
+	int	count;
+
+	count = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		count++;
+	}
+	return (count);
 }

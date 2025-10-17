@@ -6,7 +6,7 @@
 /*   By: tonlogin <tonlogin@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 09:50:04 by tonlogin          #+#    #+#             */
-/*   Updated: 2025/10/16 14:47:30 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/17 11:50:08 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ static int	ft_lenword(char const *s, char sep)
 {
 	int	n;
 
-	while (*s && *s == sep)
-		s++;
 	n = 0;
 	while (s[n] && s[n] != sep)
 		n++;
@@ -40,28 +38,28 @@ static char	**ft_checkarr(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
-	int		i;
-	int		n;
+	int		in[2];
 
-	i = 0;
+	in[0] = 0;
 	arr = ft_checkarr(s, c);
 	if (!arr)
 		return (NULL);
-	while (*s)
+	while (*s != '\0')
 	{
-		n = ft_lenword(s, c);
-		if (n > 0)
+		while (*s == c)
+			s++;
+		in[1] = ft_lenword(s, c);
+		if (in[1] > 0)
 		{
-			arr[i] = ft_strndup(s, n);
-			if (!arr[i])
+			arr[in[0]] = ft_strndup(s, in[1]);
+			if (!arr[in[0]++])
 			{
-				ft_freenarr(arr, i);
+				ft_freenarr(arr, in[0]);
 				return (NULL);
 			}
-			i++;
 		}
-		s += n;
+		s += in[1];
 	}
-	arr[i] = NULL;
+	arr[in[0]] = NULL;
 	return (arr);
 }

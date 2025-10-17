@@ -6,7 +6,7 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 17:36:36 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/14 17:52:32 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/17 09:38:46 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	while (src[src_len])
 		src_len++;
 	if (size == 0)
-		return (0);
+		return (src_len);
 	i = 0;
 	while (i < (size - 1) && src[i] != '\0')
 	{

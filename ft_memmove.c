@@ -6,7 +6,7 @@
 /*   By: tonlogin <tonlogin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 13:24:19 by tonlogin          #+#    #+#             */
-/*   Updated: 2025/10/16 15:48:49 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/17 09:36:03 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	des = (unsigned char *)dest;
 	sr = (const unsigned char *)src;
-	if (des >= sr)
+	if (!dest && !src)
+		return (NULL);
+	if (des > sr)
 	{
-		while (n > 0)
+		while (n-- > 0)
 		{
 			des[n] = sr[n];
-			n--;
 		}
 	}
 	else

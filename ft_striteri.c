@@ -6,11 +6,11 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 19:09:00 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/16 19:20:05 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/17 12:04:24 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char const *s, char (*f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int		i;
 

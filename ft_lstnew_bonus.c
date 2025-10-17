@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_memset.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tonlogin <tonlogin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/07 19:25:32 by tonlogin          #+#    #+#             */
-/*   Updated: 2025/09/07 19:43:44 by tonlogin         ###   ########.fr       */
+/*   Created: 2025/10/17 12:17:10 by pchazalm          #+#    #+#             */
+/*   Updated: 2025/10/17 13:19:25 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
 
-void	*ft_memset(void *s, int c, size_t n);
-
-int main (int ac, char **av)
+t_list	*ft_lstnew(void *content)
 {
-	ac++;
-	size_t	n;
-	int		c;
-	char	*ptr;
+	t_list	*new;
 
-	c = atoi(av[2]);
-	n = (size_t)atoi(av[3]);
-	ptr = (char *)ft_memset(av[1], c, n);
-	printf("%s", ptr);
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

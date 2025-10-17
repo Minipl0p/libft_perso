@@ -6,10 +6,11 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 14:48:08 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/16 18:44:45 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/17 11:57:39 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -50,10 +51,9 @@ static char	*ft_ifedgecase(int *n, int *flag_edge)
 	}
 	else if (*n == -2147483648)
 	{
-		str = malloc(sizeof(char) * 100);
+		str = ft_strdup("-2147483648");
 		if (!str)
 			return (NULL);
-		str = "-2147483648";
 		return (str);
 	}
 	*flag_edge = 0;

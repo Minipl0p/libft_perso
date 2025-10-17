@@ -39,25 +39,35 @@ SRCS = ft_memset.c \
 		ft_freenarr.c \
 		ft_countwordsep.c \
 		ft_split.c \
-		ft_itoa.c
+		ft_itoa.c \
+		ft_calloc.c
+
+SRC_BONUS = ft_lstnew_bonus.c \
+			ft_lstadd_front_bonus.c \
+			ft_lstsize_bonus.c \
 
 OBJS = $(SRCS:%.c=%.o)
+
+OBJS_BONUS = $(SRC_BONUS:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
+bonus : $(OBJS) $(OBJS_BONUS)
+	$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
 

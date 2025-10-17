@@ -6,7 +6,7 @@
 /*   By: tonlogin <tonlogin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 14:19:10 by tonlogin          #+#    #+#             */
-/*   Updated: 2025/10/14 21:47:42 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/17 12:38:27 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ char	*ft_strchr(const char *s, int c)
 		len_s++;
 	while (i < len_s)
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			return ((char *)(s + i));
 		i++;
 	}
-	if (c == 0)
+	if ((unsigned char)c == 0)
 		return ((char *)(s + i));
 	return (NULL);
 }
