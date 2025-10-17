@@ -6,7 +6,7 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 18:53:28 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/17 13:37:41 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/17 14:22:23 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -23,11 +23,12 @@ typedef struct s_list
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	ft_putchar_fd(char c, int fd);
-void	ft_putnbr(int nb, int fd);
+void	ft_putnbr_fd(int nb, int fd);
 char	*ft_strrchr(const char *s, int c);
 void	ft_putstr_fd(char *s, int fd);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);

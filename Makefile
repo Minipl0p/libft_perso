@@ -45,6 +45,7 @@ SRCS = ft_memset.c \
 SRC_BONUS = ft_lstnew_bonus.c \
 			ft_lstadd_front_bonus.c \
 			ft_lstsize_bonus.c \
+			ft_lstlast_bonus.c
 
 OBJS = $(SRCS:%.c=%.o)
 

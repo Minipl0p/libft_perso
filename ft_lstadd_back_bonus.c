@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 19:43:16 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/17 14:23:02 by pchazalm         ###   ########.fr       */
+/*   Created: 2025/10/17 14:05:54 by pchazalm          #+#    #+#             */
+/*   Updated: 2025/10/17 14:18:59 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnb(int nb, int fd)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (nb >= 10)
-	{
-		ft_putnb(nb / 10, fd);
-		ft_putnb(nb % 10, fd);
-	}
-	else
-		ft_putchar_fd((nb + '0'), fd);
-}
+	t_list	*last;
 
-void	ft_putnbr_fd(int nb, int fd)
-{
-	if (nb == -2147483648)
-		write(fd, "-2147483648", 11);
-	else if (nb < 0)
-	{
-		nb = nb * (-1);
-		ft_putchar_fd('-', fd);
-		ft_putnb(nb, fd);
-	}
-	else
-		ft_putnb(nb, fd);
+	last = ft_lstlast(*lst);
+	last->next = new;
 }
