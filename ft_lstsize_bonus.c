@@ -6,7 +6,7 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:32:14 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/17 13:54:06 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/17 15:10:12 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_lstsize(t_list *lst)
 {
 	int	count;
 
+	if (!lst)
+		return (0);
 	count = 0;
 	while (lst)
 	{
