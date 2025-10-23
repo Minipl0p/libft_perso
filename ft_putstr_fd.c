@@ -6,7 +6,7 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 19:30:17 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/16 19:32:26 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/19 16:53:07 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!s || !fd)
+		return ;
 	write (fd, s, ft_strlen(s));
 }

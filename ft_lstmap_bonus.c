@@ -6,7 +6,7 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 22:42:31 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/19 00:12:22 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/23 12:45:50 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*n_elem;
 	void	*n_content;
 
+	if (!lst || !f || !del)
+		return (NULL);
 	n_list = NULL;
 	while (lst)
 	{
@@ -28,7 +30,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!n_elem)
 		{
 			del(n_content);
-			free(n_elem);
 			ft_lstclear(&n_list, del);
 			return (NULL);
 		}

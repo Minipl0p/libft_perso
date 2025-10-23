@@ -6,7 +6,7 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 19:43:16 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/17 14:23:02 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/19 16:52:46 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	ft_putnb(int nb, int fd)
 
 void	ft_putnbr_fd(int nb, int fd)
 {
+	if (!fd)
+		return ;
 	if (nb == -2147483648)
 		write(fd, "-2147483648", 11);
 	else if (nb < 0)

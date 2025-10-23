@@ -6,7 +6,7 @@
 /*   By: tonlogin <tonlogin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 11:55:22 by tonlogin          #+#    #+#             */
-/*   Updated: 2025/10/14 17:32:47 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/23 12:46:22 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ size_t	ft_strlcat(char *dest, const char *src, size_t l)
 	i = 0;
 	l_dest = 0;
 	l_src = 0;
-	while (dest[l_dest])
-		l_dest++;
+	if (dest)
+	{
+		while (dest[l_dest])
+			l_dest++;
+	}
 	while (src[l_src])
 		l_src++;
 	if (l <= l_dest)

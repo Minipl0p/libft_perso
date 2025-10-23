@@ -6,13 +6,13 @@
 /*   By: tonlogin <tonlogin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 10:35:28 by tonlogin          #+#    #+#             */
-/*   Updated: 2025/10/14 19:07:26 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/23 12:46:24 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		return (c - 32);
+		return (c - ('a' - 'A'));
 	return (c);
 }

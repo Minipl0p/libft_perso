@@ -6,7 +6,7 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 20:43:23 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/17 10:42:23 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/19 16:58:19 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 	char	*s3;
 
+	if (!s1 || !s2)
+		return (NULL);
 	i = ft_strlen(s1) + ft_strlen(s2) + 1;
 	s3 = malloc(i * sizeof(char));
 	if (!s3)
