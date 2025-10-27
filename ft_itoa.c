@@ -6,13 +6,12 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 14:48:08 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/23 12:45:40 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/10/27 09:37:11 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 static int	ft_nbnb(int *n, int *sign)
 {

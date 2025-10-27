@@ -1,7 +1,7 @@
 NAME = libft.a
 
 AR = ar -rcs
-CC = clang
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
 SRCS = ft_memset.c \
