@@ -1,29 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
+/*   By: miniplop <miniplop@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 21:27:53 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/10/23 12:45:44 by pchazalm         ###   ########.fr       */
+/*   Created: 2025/12/18 19:09:45 by miniplop          #+#    #+#             */
+/*   Updated: 2025/12/18 19:11:44 by miniplop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
-
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+int	ft_isspace(char c)
 {
-	t_list	*tmp;
-
-	if (!lst || !del)
-		return ;
-	while (*lst)
-	{
-		tmp = (*lst)->next;
-		del((*lst)->content);
-		free(*lst);
-		*lst = tmp;
-	}
+	return ((c == ' ') || (c >= '\t' && c <= '\r'));
 }

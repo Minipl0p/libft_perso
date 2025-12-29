@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tonlogin <tonlogin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 10:07:54 by tonlogin          #+#    #+#             */
-/*   Updated: 2025/11/06 20:10:40 by pchazalm         ###   ########.fr       */
+/*   Created: 2025/11/06 20:05:14 by pchazalm          #+#    #+#             */
+/*   Updated: 2025/11/06 20:10:32 by pchazalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_atoi(const char *ptr)
+long int	ft_atol(const char *ptr)
 {
-	size_t			i;
-	int				sign;
-	long long int	result;
+	size_t		i;
+	int			sign;
+	long int	result;
 
 	result = 0;
 	sign = 1;
@@ -35,5 +35,5 @@ int	ft_atoi(const char *ptr)
 		result = 10 * result + (ptr[i] - '0');
 		i++;
 	}
-	return ((int)(result * sign));
+	return ((result * sign));
 }
