@@ -13,7 +13,7 @@ NAME    := libft.a
 CC      := cc
 CFLAGS  := -Wall -Wextra -Werror -g
 AR      := ar rcs
-RM      := rm -f
+RM      := rm -rf
 MKDIR   := mkdir -p
 
 # --- Paths -------------------------------------------------------------------
@@ -112,6 +112,42 @@ SRCS_UTILS := \
 SRCS_GNL := \
 	src/gnl/get_next_line.c
 
+# --- LISTDB ---------------------------------------------------------------------
+SRCS_LISTDB := \
+	src/listdb/ft_dbadd_back.c \
+	src/listdb/ft_dbadd_front.c \
+	src/listdb/ft_dbremove.c \
+	src/listdb/ft_dbnew.c \
+	src/listdb/ft_dbclear.c \
+	src/listdb/ft_dbdelone.c \
+	src/listdb/ft_dbsize.c \
+	src/listdb/ft_dbfirst.c \
+	src/listdb/ft_dbinsert_add.c \
+	src/listdb/ft_dbinsert_idx.c \
+	src/listdb/ft_dbiter.c \
+	src/listdb/ft_dblast.c \
+	src/listdb/ft_dbmap.c
+
+# --- BTREE ---------------------------------------------------------------------
+SRCS_BTREE := \
+	src/btree/btree_infix.c \
+	src/btree/btree_insert.c \
+	src/btree/btree_new.c \
+	src/btree/btree_postfix.c \
+	src/btree/btree_prefix.c \
+	src/btree/btree_search.c
+
+# --- DICT ---------------------------------------------------------------------
+SRCS_DICT := \
+	src/dict/dict_clear.c \
+	src/dict/dict_create.c \
+	src/dict/dict_destroy.c \
+	src/dict/dict_get.c \
+	src/dict/dict_hash.c \
+	src/dict/dict_iter.c \
+	src/dict/dict_remove.c \
+	src/dict/dict_set.c
+
 # --- All sources -------------------------------------------------------------
 SRCS := \
 	$(SRCS_CHAR) \
@@ -122,6 +158,9 @@ SRCS := \
 	$(SRCS_PRINTF) \
 	$(SRCS_LIST) \
 	$(SRCS_UTILS) \
+	$(SRCS_LISTDB) \
+	$(SRCS_BTREE) \
+	$(SRCS_DICT) \
 	$(SRCS_GNL)
 
 # --- Objects -----------------------------------------------------------------
@@ -146,7 +185,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 
 clean:
 	@printf "$(RED)🧹 Cleaning objects...$(NC)\n"
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJDIR)
 
 fclean: clean
 	@printf "$(RED)🗑️ Removing $(NAME)...$(NC)\n"

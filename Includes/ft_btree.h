@@ -6,7 +6,7 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 09:38:45 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/12/31 10:26:22 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/12/31 16:17:33 by miniplop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,4 @@ void	btree_clear(t_btree **root, void (*del)(void *));
 void	btree_insert(t_btree **root, void *item, int (*cmpf)(void *, void *));
 void	*btree_search(t_btree *root, void *data, int (*cmpf)(void *, void *));
 
-#endif // !FT_BTREE_H
+#endif
