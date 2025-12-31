@@ -6,13 +6,13 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:21:26 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/12/30 16:21:21 by pchazalm         ###   ########.fr       */
+/*   Updated: 2025/12/31 17:19:20 by miniplop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/ft_printf.h"
 
-int	ft_putnbr_printf(int nb)
+int	ft_putnbr_printf(int nb, int fd)
 {
 	int	n;
 
@@ -25,14 +25,14 @@ int	ft_putnbr_printf(int nb)
 	if (nb < 0)
 	{
 		nb = nb * (-1);
-		n += ft_putchar_printf('-');
+		n += ft_putchar_printf(fd, '-');
 	}
 	if (nb >= 10)
 	{
-		n += ft_putnbr_printf(nb / 10);
-		n += ft_putnbr_printf(nb % 10);
+		n += ft_putnbr_printf(nb / 10, fd);
+		n += ft_putnbr_printf(nb % 10, fd);
 	}
 	else
-		n += ft_putchar_printf(nb + '0');
+		n += ft_putchar_printf(nb + '0', fd);
 	return (n);
 }

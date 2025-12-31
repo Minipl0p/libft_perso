@@ -86,6 +86,7 @@ SRCS_IO := \
 # --- Printf ------------------------------------------------------------------
 SRCS_PRINTF := \
 	src/printf/ft_printf.c \
+	src/printf/vd_printf.c \
 	src/printf/ft_putchar_printf.c \
 	src/printf/ft_putstr_printf.c \
 	src/printf/ft_putnbr_printf.c \

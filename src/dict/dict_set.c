@@ -6,7 +6,7 @@
 /*   By: miniplop <miniplop@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 15:14:24 by miniplop          #+#    #+#             */
-/*   Updated: 2025/12/31 16:28:04 by miniplop         ###   ########.fr       */
+/*   Updated: 2025/12/31 18:47:39 by miniplop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,3 @@ int	dict_set(t_dict *dict, const char *key, void *value)
 	dict->count++;
 	return (0);
 }
-
