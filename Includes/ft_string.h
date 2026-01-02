@@ -6,7 +6,7 @@
 /*   By: pchazalm <pchazalm@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 15:41:05 by pchazalm          #+#    #+#             */
-/*   Updated: 2025/12/30 16:03:49 by pchazalm         ###   ########.fr       */
+/*   Updated: 2026/01/02 10:30:00 by miniplop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char	**ft_split(const char *s, char c);
-char	*ft_join_wish(char **strs);
+char	*ft_join_wish(int ac, char **strs);
 
 #endif
