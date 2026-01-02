@@ -111,7 +111,7 @@ SRCS_UTILS := \
 
 # --- GNL ---------------------------------------------------------------------
 SRCS_GNL := \
-	src/gnl/get_next_line.c
+	src/gnl/get_next_line.c \
 	src/gnl/get_next_line_utils.c
 
 # --- LISTDB ---------------------------------------------------------------------
