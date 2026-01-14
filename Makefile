@@ -134,6 +134,7 @@ SRCS_LISTDB := \
 SRCS_BTREE := \
 	src/btree/btree_infix.c \
 	src/btree/btree_insert.c \
+	src/btree/btree_clear.c \
 	src/btree/btree_new.c \
 	src/btree/btree_postfix.c \
 	src/btree/btree_prefix.c \

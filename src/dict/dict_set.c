@@ -6,13 +6,13 @@
 /*   By: miniplop <miniplop@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 15:14:24 by miniplop          #+#    #+#             */
-/*   Updated: 2025/12/31 18:47:39 by miniplop         ###   ########.fr       */
+/*   Updated: 2026/01/13 17:30:10 by miniplop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/ft_dict.h"
 
-static int	find_n_set(t_dict_entry *entry, const char *key, void *value)
+static int	find_n_set(t_dict_entry *entry, char *key, void *value)
 {
 	while (entry)
 	{
@@ -26,7 +26,7 @@ static int	find_n_set(t_dict_entry *entry, const char *key, void *value)
 	return (1);
 }
 
-int	dict_set(t_dict *dict, const char *key, void *value)
+int	dict_set(t_dict *dict, char *key, void *value)
 {
 	t_dict_entry	*entry;
 	size_t			index;
