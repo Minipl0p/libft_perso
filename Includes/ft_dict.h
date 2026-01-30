@@ -6,7 +6,7 @@
 /*   By: miniplop <miniplop@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 00:00:00 by miniplop          #+#    #+#             */
-/*   Updated: 2026/01/14 15:17:54 by miniplop         ###   ########.fr       */
+/*   Updated: 2026/01/30 13:02:43 by miniplop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_dict
 t_dict	*dict_create(size_t size);
 void	dict_clear(t_dict *dict, void (*del)(void *));
 void	dict_destroy(t_dict *dict, void (*del)(void *));
-int		dict_set(t_dict *dict, char *key, void *value);
+int		dict_set(t_dict *dict, char *key, void *value, void (*del)(void *));
 void	*dict_get(t_dict *dict, const char *key);
 int		dict_remove(t_dict *dict, const char *key, void (*del)(void *));
 size_t	dict_hash(const char *key, size_t size);
