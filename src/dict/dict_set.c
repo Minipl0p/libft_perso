@@ -6,13 +6,14 @@
 /*   By: miniplop <miniplop@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 15:14:24 by miniplop          #+#    #+#             */
-/*   Updated: 2026/01/30 14:02:33 by miniplop         ###   ########.fr       */
+/*   Updated: 2026/01/30 23:32:41 by miniplop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/ft_dict.h"
 
-static int	find_n_set(t_dict_entry *entry, char *key, void *value, void (*del)(void *))
+static int	find_n_set(t_dict_entry *entry, char *key,
+		void *value, void (*del)(void *))
 {
 	while (entry)
 	{
