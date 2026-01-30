@@ -6,7 +6,7 @@
 /*   By: miniplop <miniplop@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 15:14:24 by miniplop          #+#    #+#             */
-/*   Updated: 2026/01/30 13:13:12 by miniplop         ###   ########.fr       */
+/*   Updated: 2026/01/30 14:02:33 by miniplop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static int	find_n_set(t_dict_entry *entry, char *key, void *value, void (*del)(v
 		if (!ft_strcmp(entry->key, key))
 		{
 			del(entry->value);
-			del(key);
 			entry->value = value;
 			return (0);
 		}
